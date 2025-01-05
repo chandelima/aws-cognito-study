@@ -1,9 +1,9 @@
 import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 import { UnsubscriberService } from '../../core/services/unsubscriber.service';
-import { IReadToDo } from '../../interfaces/to-do/read-to-do.interface';
+import { IReadToDo } from '../interfaces/to-do/read-to-do.interface';
 import { ToDoService } from '../services/to-do.service';
-import { IUpdateTodo } from '../../interfaces/to-do/update-to-do.interface';
-import { ICreateToDo } from '../../interfaces/to-do/create-to-do.interface';
+import { IUpdateTodo } from '../interfaces/to-do/update-to-do.interface';
+import { ICreateToDo } from '../interfaces/to-do/create-to-do.interface';
 
 @Component({
   selector: 'app-tasks',

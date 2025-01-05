@@ -3,9 +3,9 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { BackendUrlService } from '../../core/services/backend-url.service';
 import { IDefaultResponse } from '../../core/interfaces/default-response.interface';
-import { IReadToDo } from '../../interfaces/to-do/read-to-do.interface';
-import { ICreateToDo } from '../../interfaces/to-do/create-to-do.interface';
-import { IUpdateTodo } from '../../interfaces/to-do/update-to-do.interface';
+import { IReadToDo } from '../interfaces/to-do/read-to-do.interface';
+import { ICreateToDo } from '../interfaces/to-do/create-to-do.interface';
+import { IUpdateTodo } from '../interfaces/to-do/update-to-do.interface';
 
 @Injectable({
   providedIn: 'root'
