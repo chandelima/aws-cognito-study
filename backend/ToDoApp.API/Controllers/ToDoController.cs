@@ -1,12 +1,13 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using ToDoApp.API.Config;
 using ToDoApp.API.Entities;
-using ToDoApp.API.Extensions;
-using ToDoApp.Application.DTOs;
-using ToDoApp.Application.Interfaces;
+using ToDoApp.Application.DTOs.ToDoDTO;
+using ToDoApp.Application.Interfaces.ToDoService;
 
 namespace ToDoApp.API.Controllers;
 
-[Route("api/v1/todo")]
+[Route("api/v1/todos")]
 [ApiController]
 public class ToDoController : ControllerBase
 {
@@ -28,6 +29,7 @@ public class ToDoController : ControllerBase
     }
 
     [HttpGet]
+    [Authorize]
     public async Task<IActionResult> GetAll()
     {
         var response = new DafaultResponse(
@@ -38,6 +40,7 @@ public class ToDoController : ControllerBase
     }
 
     [HttpGet("{id}")]
+    [Authorize]
     public async Task<IActionResult> GetById(string id)
     {
         var response = new DafaultResponse(
@@ -48,6 +51,7 @@ public class ToDoController : ControllerBase
     }
 
     [HttpPost]
+    [Authorize]
     public async Task<IActionResult> Create(CreateToDoDTO? dto)
     {
         await _createService.Create(dto);
@@ -57,6 +61,7 @@ public class ToDoController : ControllerBase
     }
 
     [HttpPut]
+    [Authorize]
     public async Task<IActionResult> Update(UpdateToDoDTO? dto)
     {
         await _updateService.Update(dto);
@@ -66,6 +71,7 @@ public class ToDoController : ControllerBase
     }
 
     [HttpDelete("{id}")]
+    [Authorize]
     public async Task<IActionResult> Delete(string id)
     {
         var response = new DafaultResponse(

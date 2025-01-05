@@ -1,14 +1,17 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 using ToDoApp.Application;
-using ToDoApp.Infra;
+using ToDoApp.Infra.Data;
+using ToDoApp.Infra.External;
 
 namespace ToDoApp.IoC;
 public static class DependencyInjection
 {
-    public static void SetupToDoApp(this IServiceCollection services)
+    public static void SetupToDoApp(this IServiceCollection services, IConfiguration configuration)
     {
-        services
-            .AddInfra()
-            .AddApplication();
+        services.AddInfraData()
+                .AddInfraExternal(configuration)
+                .AddApplication()
+                .AddCore();
     }
 }

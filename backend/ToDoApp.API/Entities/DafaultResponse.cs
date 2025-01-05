@@ -1,4 +1,4 @@
-﻿using ToDoApp.Application.Shared.Entities;
+﻿using ToDoApp.Core.Entities;
 
 namespace ToDoApp.API.Entities;
 
