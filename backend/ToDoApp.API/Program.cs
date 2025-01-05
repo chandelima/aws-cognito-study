@@ -1,4 +1,6 @@
-using ToDoApp.Infra.Services;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using ToDoApp.API.Config;
+using ToDoApp.Infra.Data.Services;
 using ToDoApp.IoC;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -8,9 +10,17 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGenForToDoApp();
 
-builder.Services.SetupToDoApp();
+builder.Services.AddAuthorization();
+builder.Services
+    .AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddJwtBearer();
+builder.Services.ConfigureOptions<JwtBearerConfigureExtensions>();
+builder.Services.AddHttpContextAccessor();
+
+builder.Services.SetupToDoApp(builder.Configuration);
+builder.Services.SetupCors(builder.Configuration);
 
 var app = builder.Build();
 
@@ -19,6 +29,11 @@ if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
+    app.UseCors("Development");
+}
+else
+{
+    app.UseCors("Production");
 }
 
 app.UseHttpsRedirection();

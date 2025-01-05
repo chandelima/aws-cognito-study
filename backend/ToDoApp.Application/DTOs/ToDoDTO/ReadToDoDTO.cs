@@ -1,9 +1,8 @@
-﻿namespace ToDoApp.Domain.Entities;
-
-public class ToDo : Base
+﻿namespace ToDoApp.Application.DTOs.ToDoDTO;
+public class ReadToDoDTO
 {
+    public string Id { get; set; } = null!;
     public string Description { get; set; } = null!;
     public DateTime CreationDate { get; set; }
     public DateTime? CompletionDate { get; set; }
-    public string UserId { get; set; } = null!;
 }

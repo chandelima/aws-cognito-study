@@ -9,9 +9,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDoApp.Domain", "ToDoApp.D
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDoApp.Application", "ToDoApp.Application\ToDoApp.Application.csproj", "{4828B451-6E26-4A78-B955-8682EAA1EEC6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDoApp.Infra", "ToDoApp.Infra\ToDoApp.Infra.csproj", "{E3978001-02EC-4CE4-A46E-994B78DFC344}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDoApp.Infra.Data", "ToDoApp.Infra.Data\ToDoApp.Infra.Data.csproj", "{E3978001-02EC-4CE4-A46E-994B78DFC344}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDoApp.IoC", "ToDoApp.IoC\ToDoApp.IoC.csproj", "{1CF729E7-3744-4089-94A3-3EBE3271EC4B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDoApp.Infra.External", "ToDoApp.Infra.External\ToDoApp.Infra.External.csproj", "{A3AA31D5-5742-41CE-8029-226C44B81B27}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDoApp.Core", "ToDoApp.Core\ToDoApp.Core.csproj", "{DDF0131C-6A76-4712-A5D9-69F68DC24F12}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +43,14 @@ Global
 		{1CF729E7-3744-4089-94A3-3EBE3271EC4B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1CF729E7-3744-4089-94A3-3EBE3271EC4B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1CF729E7-3744-4089-94A3-3EBE3271EC4B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3AA31D5-5742-41CE-8029-226C44B81B27}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3AA31D5-5742-41CE-8029-226C44B81B27}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3AA31D5-5742-41CE-8029-226C44B81B27}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3AA31D5-5742-41CE-8029-226C44B81B27}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DDF0131C-6A76-4712-A5D9-69F68DC24F12}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DDF0131C-6A76-4712-A5D9-69F68DC24F12}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DDF0131C-6A76-4712-A5D9-69F68DC24F12}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DDF0131C-6A76-4712-A5D9-69F68DC24F12}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
