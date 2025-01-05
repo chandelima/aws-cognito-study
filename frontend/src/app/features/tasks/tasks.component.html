@@ -1,0 +1,41 @@
+<div class="card toDo-input-area">
+  <input
+    #input
+    [(ngModel)]="inputValue"
+    (ngModelChange)="onInputValueChange($event)"
+    (keydown.enter)="save()"
+    type="text"
+    tabindex="1"
+    class="toDo-input"
+    placeholder="Sua próxima tarefa..."
+  >
+  <i
+    class="material-icons clickable unselectable"
+    (click)="save()"
+    tabIndex="1"
+  >{{ !!activeTodo ? "save" : "add" }}</i>
+</div>
+<div *ngIf="toDoList?.length" class="card toDos-area">
+  <div *ngFor="let toDo of toDoList" class="clickable toDo">
+    <i
+      class="material-icons unselectable"
+      [class.completed]="isCompleted(toDo)"
+      (click)="setStatus(toDo)"
+    >
+      {{ isCompleted(toDo) ? 'task_alt' : 'radio_button_unchecked' }}</i>
+    <span
+      class="description width-full"
+      [class.completed]="isCompleted(toDo)"
+      (click)="setActive(toDo)"
+    >
+      {{toDo.description}}
+    </span>
+    <i
+      class="material-icons unselectable"
+      [class.completed]="isCompleted(toDo)"
+      (click)="delete(toDo.id)"
+      (keydown.enter)="delete(toDo.id)"
+      tabIndex="1"
+    >close</i>
+  </div>
+</div>

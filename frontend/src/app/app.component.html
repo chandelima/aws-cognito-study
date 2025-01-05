@@ -1,0 +1,22 @@
+<app-core></app-core>
+<div class="app">
+  <div class="navbar">
+    <div class="inner-navbar">
+      <div class="logo">✅ TODO</div>
+      <div class="links">
+        <a routerLink="/">Início</a>
+        <a
+          routerLink="{{ !isAuthenticated ? '/auth/login' : '/auth/logout'}}"
+          class="clickable"
+        >{{ !isAuthenticated ? "Login" : "Logout" }}</a>
+      </div>
+    </div>
+  </div>
+  <div class="content">
+    <div class="container">
+      <router-outlet></router-outlet>
+      <p *ngIf="!isAuthenticated" class="noAuthenticated">Você deve estar logado para gerenciar suas tarefas.</p>
+    </div>
+  </div>
+  <div class="footer">Desenvolvido por Alexandre Lima</div>
+</div>
