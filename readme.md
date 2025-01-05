@@ -5,7 +5,7 @@ Este repositório é um estudo prático de autenticação e autorização utiliz
 
 ## Visão Geral
 
-O objetivo deste projeto é implementar autenticação de usuários com o AWS Cognito, protegendo APIs e gerenciando fluxos de login, registro e recuperação de senha.
+O objetivo deste projeto é implementar autenticação de usuários com o AWS Cognito, protegendo APIs e gerenciando fluxos de login, logout e refresh token.
 
 A aplicação está dividida em duas partes principais:
 
