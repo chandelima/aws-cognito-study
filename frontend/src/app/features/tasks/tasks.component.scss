@@ -1,0 +1,51 @@
+.toDo-input-area {
+  display: flex;
+  color: #555;
+  gap: 4px;
+  width: 100%;
+
+  .toDo-input {
+    border: none;
+    outline: none;
+    font-size: 16px;
+    width: 100%;
+    color: #555;
+
+    &::placeholder {
+      color: #888;
+      font-style: italic;
+    }
+  }
+}
+
+.toDos-area {
+  margin-top: 16px;
+  width: 100%;
+}
+
+.toDo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #555;
+
+  .completed {
+    color: #888;
+  }
+
+  .description {
+    text-align: left;
+    font-size: 14px;
+
+    &.completed {
+      text-decoration: line-through;
+      font-style: italic;
+    }
+  }
+}
+
+::ng-deep {
+  .inner-navbar {
+    height: calc(200px - 29px);
+  }
+}

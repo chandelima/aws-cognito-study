@@ -1,0 +1,21 @@
+.card {
+  background-color: #FFF;
+  box-shadow: 0 0 16px rgba(0, 0, 0, 0.15);
+  border-radius: 16px;
+  border: 1px solid #CCC;
+  position: relative;
+  top: -30px;
+  padding: 16px !important;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.unselectable {
+  user-select: none;
+}
+
+.width-full {
+  width: 100%;
+}
